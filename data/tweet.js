@@ -60,3 +60,7 @@ export async function update(id,text){
 export async function remove(id){
     tweets = tweets.filter((tweet) => tweet.id !== id);
 }
+
+export async function signup(){
+    
+}

@@ -48,4 +48,4 @@ export async function delteTweet(req, res){
     const id = req.query.id;
     await tweetRepository.remove(id);
     res.sendStatus(204);
-}
+} 

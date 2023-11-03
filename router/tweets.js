@@ -29,6 +29,9 @@ router.post("/", validateTweet, tweetController.createTweet);
 router.put("/:id", validateTweet, tweetController.updateTweet);
 
 // DELETE / tweets/:id     
-router.delete("/:id", tweetController.delteTweet)
+router.delete("/:id", tweetController.delteTweet);
+
+
+
 
 export default router; 

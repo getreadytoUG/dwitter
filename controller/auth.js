@@ -49,7 +49,7 @@ export async function login(req, res) {
     
     const isValidpassword = await bcrypt.compare(password, user.password);  // await 대신에 comparesSync 사용가능
     if (!isValidpassword){
-        res.status(401).jsson({message: "비밀번호 에러!"});
+        res.status(401).json({message: "비밀번호 에러!"});
     }
 
     // 맞으면 토큰 생성(200)

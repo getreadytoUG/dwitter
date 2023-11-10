@@ -1,6 +1,7 @@
 import { response } from "express";
 import * as tweetRepository from "../data/tweet.js";
 import { isAuth } from "../middleware/auth.js";
+import { getSocketIO } from "../connection/socket.js";
 
 // getTweets
 export async function getTweets(req, res){
@@ -28,6 +29,7 @@ export async function createTweet(req, res, next){
     const { text } = req.body;
     const tweet = await tweetRepository.create(text, req.userId);
     res.status(201).json(tweet);
+    getSocketIO().emit("tweet", tweet)
 }
 
 // updateTweet
